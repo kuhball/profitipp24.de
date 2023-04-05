@@ -1,0 +1,14 @@
+baseURL: https://profitipp24.de
+languageCode: de-de
+title: profitipp24.de
+theme: fluency
+mainSections:
+  - posts
+menu:
+  main:
+    - identifier: about
+      name: about
+      url: about/
+      weight: 4
+taxonomies:
+  author: author

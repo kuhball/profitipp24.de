@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main id="main" class="index-page homepage" role="main">
+  <div class="container has-padding">
+    {{ $pageSize := site.Params.pageSize.index | default 5 }}
+    {{ $showSection := false }}
+    {{ if gt (len site.Params.mainSections) 1 }} {{ $showSection = true }} {{ end}}
+
+    {{ $paginator := .Paginate (where site.RegularPages "Section" "in" site.Params.mainSections) $pageSize }}
+    <div class="article-list">
+      {{ range $paginator.Pages }}
+      <article class="post">
+        <h3 class="title">
+          <p title="{{ .Title }}">{{ .Title }}</p>
+        </h3>
+        <div class="right">
+          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}" class="date">{{ .Date.Format "January 02, 2006" }}</time>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    {{ partial "pagination.html" . }}
+  </div>
+</main>
+{{ end }}
