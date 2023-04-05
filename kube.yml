@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: profitipp24.de 
+
+spec:
+  containers:
+    - name: route
+      image: localhost/podman_caddy
+      command: ['/go/bin/podman_caddy', 'add', '--forward', 'profitipp24.de:profitipp24.de:80', '--update', '5' ]
+
+    - name: app
+      image: localhost/profitipp24.de
+
