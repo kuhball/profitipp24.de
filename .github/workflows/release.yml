@@ -20,7 +20,6 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            kuhball/profitipp24.de
             ghcr.io/kuhball/profitipp24.de
           # generate Docker tags based on the following events/attributes
           tags: |
