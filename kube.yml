@@ -11,5 +11,5 @@ spec:
       command: ['/go/bin/podman_caddy', 'add', '--forward', 'profitipp24.de:profitipp24.de:80', '--update', '5' ]
 
     - name: app
-      image: localhost/profitipp24.de
+      image: ghcr.io/kuhball/profitipp24.de:latest
 
